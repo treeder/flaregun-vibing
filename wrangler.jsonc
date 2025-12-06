@@ -1,0 +1,166 @@
+{
+  "name": "flaregun",
+  "compatibility_date": "2025-10-21",
+  "main": "./dist/index.js",
+  "assets": {
+    "directory": "./public/",
+    "binding": "ASSETS",
+  },
+  "build": {
+    "command": "npx -y treeder/flaregun build",
+    "cwd": ".",
+    "watch_dir": ["functions", "public"],
+  },
+  "preview_urls": true,
+  "vars": {
+    "ENV": "dev",
+  },
+  "kv_namespaces": [
+    {
+      "binding": "KV",
+      "title": "flaregun",
+      "id": "flaregun",
+    },
+  ],
+  "d1_databases": [
+    {
+      "binding": "D1",
+      "database_name": "flaregun",
+      "database_id": "flaregun",
+    },
+  ],
+  "r2_buckets": [
+    {
+      "binding": "R2",
+      "bucket_name": "flaregun",
+    },
+  ],
+  // Queues require a workers paid plan. Uncomment this if you have a paid plan.
+  // "queues": {
+  //   "producers": [
+  //     {
+  //       "queue": "flaregun",
+  //       "binding": "QUEUE",
+  //     },
+  //   ],
+  //   "consumers": [
+  //     {
+  //       "queue": "flaregun",
+  //       "max_batch_size": 10,
+  //       "max_batch_timeout": 30,
+  //       "max_retries": 3,
+  //       "retry_delay": 60,
+  //     },
+  //   ],
+  // },
+  // uncomment to enable scheduler:
+  // "triggers": {
+  //  "crons": ["* * * * *"],
+  // },
+  "env": {
+    "dev": {
+      "name": "flaregun-dev",
+      "preview_urls": true,
+      "vars": {
+        "ENV": "dev",
+      },
+      "kv_namespaces": [
+        {
+          "binding": "KV",
+          "title": "flaregun-dev",
+          "id": "flaregun-dev",
+        },
+      ],
+      "d1_databases": [
+        {
+          "binding": "D1",
+          "database_name": "flaregun-dev",
+          "database_id": "flaregun-dev",
+        },
+      ],
+      "r2_buckets": [
+        {
+          "binding": "R2",
+          "bucket_name": "flaregun-dev",
+        },
+      ],
+      "queues": {
+        "producers": [
+          {
+            "queue": "flaregun-dev",
+            "binding": "QUEUE",
+          },
+        ],
+        "consumers": [
+          {
+            "queue": "flaregun-dev",
+            "max_batch_size": 10,
+            "max_batch_timeout": 30,
+            "max_retries": 3,
+            "retry_delay": 60,
+          },
+        ],
+      },
+      // uncomment to enable scheduler:
+      // "triggers": {
+      //  "crons": ["* * * * *"],
+      // },
+    },
+    "prod": {
+      "name": "flaregun-prod",
+      "preview_urls": true,
+      "vars": {
+        "ENV": "prod",
+      },
+      "kv_namespaces": [
+        {
+          "binding": "KV",
+          "title": "flaregun-prod",
+          "id": "flaregun-prod",
+        },
+      ],
+      "d1_databases": [
+        {
+          "binding": "D1",
+          "database_name": "flaregun-prod",
+          "database_id": "flaregun-prod",
+        },
+      ],
+      "r2_buckets": [
+        {
+          "binding": "R2",
+          "bucket_name": "flaregun-prod",
+        },
+      ],
+      "queues": {
+        "producers": [
+          {
+            "queue": "flaregun-prod",
+            "binding": "QUEUE",
+          },
+        ],
+        "consumers": [
+          {
+            "queue": "flaregun-prod",
+            "max_batch_size": 10,
+            "max_batch_timeout": 30,
+            "max_retries": 3,
+            "retry_delay": 60,
+          },
+        ],
+      },
+      // uncomment to enable scheduler:
+      // "triggers": {
+      //  "crons": ["* * * * *"],
+      // },
+    },
+  },
+  "placement": {
+    "mode": "smart",
+  },
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1,
+  },
+  "compatibility_flags": ["global_fetch_strictly_public"],
+}

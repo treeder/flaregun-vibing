@@ -1,0 +1,44 @@
+{
+  "name": "flaregun-starter",
+  "type": "module",
+  "version": "1.0.2",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm install && npx -y wrangler dev --live-reload",
+    "build": "npx -y treeder/flaregun build",
+    "test": "npx -y treeder/testkit --port=8787",
+    "testdev": "node tests/tests.js",
+    "setup": "npx -y treeder/flaregun setup",
+    "deploy": "npx -y wrangler deploy",
+    "deploy:preview": "npx -y wrangler versions upload",
+    "deploy:dev": "npx -y wrangler deploy --env dev",
+    "deploy:prod": "npx -y wrangler deploy --env prod",
+    "deploy:prod:preview": "npx -y wrangler versions upload --env prod",
+    "pushdev": "git push origin --force `git symbolic-ref --short HEAD`:dev"
+  },
+  "author": "treeder",
+  "license": "Apache-2.0",
+  "description": "",
+  "dependencies": {
+    "api": "github:treeder/api",
+    "console-logger": "github:treeder/console-logger",
+    "flaregun": "github:treeder/flaregun",
+    "migrations": "github:treeder/migrations",
+    "nanoid": "^5.1.5",
+    "once": "github:treeder/once",
+    "passkeys": "github:treeder/passkeys",
+    "rend": "github:treeder/rend"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2",
+    "testkit": "github:treeder/testkit"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "all",
+    "printWidth": 120,
+    "bracketSameLine": true
+  }
+}

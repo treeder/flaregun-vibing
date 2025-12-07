@@ -1,4 +1,4 @@
-import { Post } from '../../../data/posts.js'
+import { Post } from '../../data/posts.js'
 
 export async function onRequestPut(c) {
   let id = c.params.id

@@ -1,5 +1,5 @@
 import { html } from 'rend'
-import { getPosts, Post } from './data/posts.js'
+import { getPosts, Post } from '../data/posts.js'
 
 export async function onRequestGet(c) {
   let posts = await getPosts(c, {})

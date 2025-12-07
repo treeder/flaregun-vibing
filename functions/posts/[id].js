@@ -1,5 +1,5 @@
 import { html } from 'rend'
-import { getPost, Post } from '../../data/posts.js'
+import { getPost, Post } from '../data/posts.js'
 
 export async function onRequestGet(c) {
   let id = c.params.id
@@ -10,7 +10,7 @@ export async function onRequestGet(c) {
   return await c.data.rend.html({
     main: render,
     post,
-  })
+  }) 
 }
 
 function render(d) {

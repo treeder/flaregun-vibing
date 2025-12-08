@@ -63,7 +63,9 @@ export async function layout(d) {
           </div>
         </div>
 
-        ${await slot('main', d)}
+        <div class="p12">
+            ${await slot('main', d)}
+        </div>
       </body>
     </html> `
 }

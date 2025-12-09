@@ -32,6 +32,49 @@ export function root(d) {
       color: var(--md-sys-color-on-background);
     }
 
+    /* Web 2.0 Global Styles */
+    body {
+        background: linear-gradient(135deg, var(--md-sys-color-surface-container-low) 0%, var(--md-sys-color-surface-container-high) 100%);
+        min-height: 100vh;
+    }
+
+    .topnav {
+        background: linear-gradient(90deg, var(--md-sys-color-primary) 0%, var(--md-sys-color-tertiary) 100%);
+        color: white;
+        padding: 12px 24px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        border-radius: 0 0 16px 16px;
+    }
+
+    .topnav a, .topnav .title-large {
+        color: white !important;
+        text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    }
+
+    .card-modern {
+        background: var(--md-sys-color-surface);
+        border-radius: 16px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+        padding: 24px;
+        border: 1px solid var(--md-sys-color-outline-variant);
+    }
+
+    .btn-glossy {
+        background: linear-gradient(to bottom, var(--md-sys-color-primary) 0%, var(--md-sys-color-primary-fixed-dim) 100%);
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), 0 2px 4px rgba(0,0,0,0.2);
+        border-radius: 20px;
+        color: white;
+        font-weight: bold;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+    .btn-glossy:hover {
+        transform: translateY(-1px);
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), 0 4px 8px rgba(0,0,0,0.3);
+    }
+
     ${all(d)}
   `
 }
@@ -39,8 +82,9 @@ export function root(d) {
 export function all(d) {
   return css`
     a {
-      color: var(--md-sys-color-secondary);
+      color: var(--md-sys-color-primary);
       text-decoration: none;
+      font-weight: 500;
     }
 
     .slightly-opaque {
